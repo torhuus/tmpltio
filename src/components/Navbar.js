@@ -1,8 +1,6 @@
 import React from 'react';
-import axios from 'axios';
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { Field, Formik } from 'formik';
 import Logo from '../logo.svg';
-import qs from 'qs';
 
 const Navbar = () => {
   return (
