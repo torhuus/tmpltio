@@ -35,10 +35,9 @@
   </head>
   <body>
     <!-- A little help for the Netlify post-processing bots -->
-    <form name="tmplt-email-list" netlify netlify-honeypot="bot-field" hidden>
-      <input type="hidden" name="form-name" value="tmplt-email-list" />
-
+    <form data-netlify="true" hidden name="contact" netlify-honeypot="bot-field">
       <input type="email" name="email" />
+      <input name="bot-field" type="hidden" />
     </form>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>

@@ -1,5 +1,8 @@
 import React from 'react';
+import axios from 'axios';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 import Logo from '../logo.svg';
+import qs from 'qs';
 
 const Navbar = () => {
   return (
@@ -8,24 +11,33 @@ const Navbar = () => {
         <img src={Logo} alt='' style={{ width: '100px', margin: '0 auto' }} />
         <h1 className='display-3 font-weight-bold'>Welcome to tmplt.io</h1>
         <p className='lead'>Your one stop shop for 10/10 templates for business and personal use</p>
-        <form name='tmplt-email-list' method='post' data-netlify='true'>
-          <div className='input-group input-group-lg mt-4'>
-            <input
-              type='email'
-              name='email'
-              id='email'
-              placeholder='Enter your email...'
-              className='form-control'
-            />
-            <div className='input-group-prepend'>
+        <Formik
+          initialValues={{
+            'bot-field': '',
+            'form-name': 'contact',
+            email: '',
+          }}>
+          <form name='contact' method='post' data-netlify='true'>
+            <div className='input-group input-group-lg mt-4'>
               <input
-                type='submit'
-                value='Get notified'
-                className='btn btn-secondary input-group-text'
+                type='email'
+                name='email'
+                id='email'
+                placeholder='Enter your email...'
+                className='form-control'
               />
+              <div className='input-group-prepend'>
+                <input
+                  type='submit'
+                  value='Get notified'
+                  className='btn btn-secondary btn-block input-group-text'
+                />
+              </div>
             </div>
-          </div>
-        </form>
+            <Field type='hidden' name='bot-field' />
+            <Field type='hidden' name='form-name' />
+          </form>
+        </Formik>
       </div>
     </div>
   );
