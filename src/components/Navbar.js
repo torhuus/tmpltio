@@ -6,7 +6,7 @@ import '../App.css';
 const Navbar = () => {
   return (
     <div className='container min-vh-100 bg-white d-flex justify-content-center align-items-center'>
-      <div className='row d-flex flex-column text-center'>
+      <div className='row d-flex flex-column text-center px-3'>
         <div className=''>
           <img src={Logo} alt='' style={{ width: '150px' }} />
         </div>
